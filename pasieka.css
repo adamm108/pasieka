@@ -30,6 +30,8 @@ h1 {
 
 nav{
     display:block;
+    position:fixed;
+    z-index: 3;
     width:20px;
     height:20px;
 }
@@ -53,7 +55,7 @@ section {
 }
 .container {
     display: flex;
-    background-image: url('12.png');
+    background-image: url('plaster.mp4');
     background-size: cover;
     background-position:left;
 
@@ -235,11 +237,22 @@ justify-content: center;
 h2{
     text-align: center;
 }
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
 #myVideo {
-    position:absolute;
-    right:-221vw;
+    position: absolute;
+    right: -224%;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: 0;
 }
+
+/* Styl dla zawartości kontenera, aby była widoczna na wideo */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
