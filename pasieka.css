@@ -59,6 +59,7 @@ div.icon{
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.2em;
+    margin-top:5vh;
 }
 
 nav a:hover {
@@ -131,7 +132,7 @@ section {
     justify-content: space-between;
     padding-bottom:10px;
     height: auto;   
-background:#E0E9B9;
+background:#FBFAF4;
 }
 
 .describe .item {
@@ -179,6 +180,8 @@ div.text{
 display:flex;
 flex-direction: row;
     background: none;
+    justify-content: center;
+    align-items: center;
     border: none;
     cursor: pointer;
     width:100%;
@@ -196,12 +199,14 @@ flex-direction: row;
         
         transform: translateX(-100%); /* Menu jest przesunięte w lewo poza ekran */
         transition: transform 0.3s ease-out; /* Płynna animacja */
-        width: 40vw; /* Szerokość menu */
+        width: 70vw; /* Szerokość menu */
         background-color:white;
        //* position: fixed; /* Ustawienie menu jako stałego */
         top: 0; /* Menu zaczyna się od górnej krawędzi */
         left: 0; /* Menu zaczyna się od lewej krawędzi */
-        height: 100vh; /* Wysokość menu */
+        height: 80vh; /* Wysokość menu */
+        border-radius: 10px;
+
 
     }
   
@@ -219,7 +224,7 @@ flex-direction: row;
     justify-content: space-between;
     padding-bottom:10px;
     height: auto;   
-    background: #F5CE37;
+    background: #FDEACC;
 align-items: center;
 
 
