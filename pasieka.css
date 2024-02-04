@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -10,8 +15,10 @@ background-repeat: no-repeat;
 }
 @media only screen and (max-width: 600px) {
     .container {
+        position:relative;
         flex-direction: column;
         height:100vh;
+        width:100vw;
     }
 
     .left-column, .right-column {
@@ -33,15 +40,17 @@ button{
 nav{
   
     align-items: center;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
+    position: fixed;
+    margin-top: 10px;
+
+    top: 10px;
+    left: 10px;
     width: 130px;
     height: 35px;
     z-index: 1000;
     background-color: #fff;
     border-radius: 10px;
-    margin: 0;
+
     transition: width 0.3s ease;
 }
 
@@ -161,7 +170,9 @@ background:#FBFAF4;
     width: 94%;
     padding-top:80px;
     padding-bottom: 80px;;
-    padding-left: 20px; /* odstęp między tekstem a obrazem */
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
 
 }
 div.text{
@@ -201,9 +212,6 @@ flex-direction: row;
         transition: transform 0.3s ease-out; /* Płynna animacja */
         width: 70vw; /* Szerokość menu */
         background-color:white;
-       //* position: fixed; /* Ustawienie menu jako stałego */
-        top: 0; /* Menu zaczyna się od górnej krawędzi */
-        left: 0; /* Menu zaczyna się od lewej krawędzi */
         height: 80vh; /* Wysokość menu */
         border-radius: 10px;
 
@@ -233,7 +241,8 @@ align-items: center;
     width: 94%;
     padding-top:80px;
     padding-bottom: 80px;;
-    padding-left: 20px; /* odstęp między tekstem a obrazem */
+    padding-left: 20px;
+    padding-right: 20px;
 justify-content: center;
 }
 .map-container{
@@ -255,25 +264,33 @@ justify-content: center;
 }
 .describe2 p {
     width: 94%;
+    padding-top: 2em;
+    padding-bottom: 2em;
         padding-left: 20px;
+        padding-right: 20px;
         font-size: 24px;
         justify-content: center;
+        text-align: justify;
     
 }
 h2{
     text-align: center;
+    padding-bottom: 2em;
+    padding-top: 2em;
 }
 .container {
-    position: relative;
-    overflow: hidden;
+    
+    overflow-x: hidden;
 }
 
 #myVideo {
     position: absolute;
-    right: -224%;
+    right: 0;
     bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;  /* Dopasowuje szerokość do kontenera */
+    height: 100%; /* Utrzymuje proporcje, dostosowując wysokość */
+    max-width: 100%; /* Zapobiega wykraczaniu poza szerokość kontenera */
+    object-fit: cover; /* Zapewnia, że wideo pokrywa cały obszar, zachowując proporcje */
 }
 
 /* Styl dla zawartości kontenera, aby była widoczna na wideo */

@@ -58,7 +58,7 @@ window.addEventListener('scroll', function() {
     var nav = document.querySelector('nav');
     var icon = document.querySelector('.icon'); // Zakładając, że istnieje taki element
 
-    if (window.pageYOffset > 100) {
+    if (window.scrollY > 10) {
         nav.style.width = '60px';
         icon.style.display = 'none';
     } else {
