@@ -160,9 +160,11 @@ background:#FBFAF4;
 }
 
 .describe img {
-    width: 85%; /* lub inny wymiar */
+    width: 100%; /* lub inny wymiar */
     height: auto; /* zachowuje proporcje obrazu */
     border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,63%); /* Dodajemy cień na dolnej krawędzi */
+
  
 }
 
@@ -176,16 +178,30 @@ background:#FBFAF4;
 
 }
 div.text{
-    font-size: 24px;
+    font-size: 18px;
 
 }
 .item {
     opacity: 0;
-    transition: opacity 4s ease;
+    transition: opacity 1s ease;
 }
 .item-animate {
-    transform: translateY(-40vh);
-    transition: transform .1s ;
+    transform: translateY(-15vh);
+    transition: transform 1.5s cubic-bezier(0,.84,0,.92) ;
+    opacity: 1;
+
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Apply the animation to animate-item class */
+.animate-item {
+    animation: fadeIn 1s ease-in-out;
+}
+.animate-item.visible {
+    animation: fadeIn 1s ease-in-out;
 }
 .hamburger {
 display:flex;
@@ -207,8 +223,8 @@ flex-direction: row;
 
   @media only screen and (max-width: 600px) {
     .menu {
-        
-        transform: translateX(-100%); /* Menu jest przesunięte w lewo poza ekran */
+        margin-top:1em;
+        transform: translateX(-105%); /* Menu jest przesunięte w lewo poza ekran */
         transition: transform 0.3s ease-out; /* Płynna animacja */
         width: 70vw; /* Szerokość menu */
         background-color:white;
@@ -234,6 +250,7 @@ flex-direction: row;
     height: auto;   
     background: #FDEACC;
 align-items: center;
+padding-bottom: 0px;
 
 
 }
@@ -268,7 +285,7 @@ justify-content: center;
     padding-bottom: 2em;
         padding-left: 20px;
         padding-right: 20px;
-        font-size: 24px;
+        font-size: 18px;
         justify-content: center;
         text-align: justify;
     
@@ -302,7 +319,7 @@ h2{
 .describe2 footer p{
 
 
-    font-size: 7px;
+    font-size: 12px;
     
 }
 .describe2 img{
@@ -310,6 +327,40 @@ h2{
 }
 footer{
     background-color: lightgreen;
-    height: 25px;
+    height: 61px;
     width:100vw;
+}
+@media only screen and (min-width: 600px) and (min-height: 900px) {
+    .container {
+        padding: 20px; /* Przykład zwiększenia paddingu */
+        /* Dodatkowe dostosowania układu */
+    }
+
+    .left-column, .right-column {
+        width: 50%; /* Dostosowanie szerokości kolumn */
+        font-size: 20px; /* Zwiększenie wielkości czcionki */
+        /* Inne dostosowania stylów */
+    }
+
+    /* Dostosowania dla tekstów i obrazów */
+    .describe .text, .describe2 .text {
+        font-size: 18px; /* Zwiększenie wielkości czcionki dla lepszej czytelności */
+    }
+
+    .describe img, .describe2 img {
+        width: 100%; /* Dostosowanie rozmiarów obrazów */
+    }
+
+    /* Dodatkowe style dla nawigacji, przycisków, itp. */
+    nav, button {
+        /* Dostosowania stylów */
+    }
+
+    /* Dodatkowe style dla innych elementów UI */
+    /* ... */
+}
+
+/* Istniejące zapytanie media dla maksymalnej szerokości 600px */
+@media only screen and (max-width: 600px) {
+    /* ... (niezmienione style dla mniejszych ekranów) ... */
 }

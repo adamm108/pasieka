@@ -58,13 +58,31 @@ window.addEventListener('scroll', function() {
     var nav = document.querySelector('nav');
     var icon = document.querySelector('.icon'); // Zakładając, że istnieje taki element
 
-    if (window.scrollY > 10) {
+    if (window.scrollY > 10
+        
+        
+        
+        
+        ) {
         nav.style.width = '60px';
         icon.style.display = 'none';
     } else {
         nav.style.width = '150px';
         icon.style.display = 'block';
     }
+});
+window.addEventListener('scroll', function() {
+    var items = document.querySelectorAll('.animate-item img'); // Updated to target .animate-item
+    var windowHeight = window.innerHeight;
+
+    items.forEach(function(item) {
+        var position = item.getBoundingClientRect();
+
+        if(position.top <= windowHeight) {
+            item.classList.add('visible'); // Add a class to trigger the animation
+            console.log("Animation triggered");
+        }
+    });
 });
 
 
